@@ -4,10 +4,11 @@
 
 	Author: Hoàng Phan Hữu Đức                MSV: 20020011    
 
-
-    1. Giới thiệu game: 
-	Board game ô ăn quan với 2 chế độ chơi gồm chơi gồm chơi với máy (có 3 mức độ) và chơi với người. Luật
- chơi dựa trên luật ô ăn quan cơ bản (1 quan = 10 dân, nước đầu không ăn quan, ...), có thể tìm hiểu ở 
+   
+   1. Giới thiệu game: 
+	Board game ô ăn quan với 2 chế độ chơi gồm chơi gồm chơi với máy (có 3 mức độ) và chơi với người. Luật 
+chơi dựa trên luật ô ăn quan cơ bản (1 quan = 10 dân, nước đầu không ăn quan, ...), có thể tìm hiểu ở 
+>>>>>>> 3aa5e68442d4ab2ef37896d0dbea595a6ae59d41
 https://vi.wikipedia.org/wiki/%C3%94_%C4%83n_quan
     2. Mô tả game:
 	- Đồ họa và âm thanh đầy đủ, giao diện đơn giản dễ nhìn

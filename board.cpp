@@ -257,7 +257,7 @@ void board::endgame()
 }
 void board::move_image(SDL_Texture *texture,SDL_Rect org,SDL_Rect deter,int time)
 {
-    int num=10;
+    int num=12;
     int s=abs(org.x-deter.x)+abs(org.y-deter.y);
     num+=(s/300)*5;
 
@@ -273,7 +273,7 @@ void board::move_image(SDL_Texture *texture,SDL_Rect org,SDL_Rect deter,int time
         render_board();
         render_image(texture,org);
         SDL_RenderPresent(renderer);
-        SDL_Delay(15);
+        SDL_Delay(12);
        // wait(15);
     }
 }
