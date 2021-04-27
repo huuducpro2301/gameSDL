@@ -6,57 +6,58 @@ using namespace std;
 #include "board.h"
 #include "display.h"
 #include "bot.h"
-void multiplayer(SDL_Renderer *renderer)
+void multiplayer()
 {
     rtmenu=0;
     board A;
     A.setup_num();
 	A.setup_link();
 	A.setup_rect();
-	setup_renderer(renderer);
+
 	A.name[1]="player 1";A.name[0]="player 2";
-    name_texture[1]=get_image_texture(renderer,"image/player1_name.bmp");name_texture[0]=get_image_texture(renderer,"image/player2_name.bmp");
+    name_texture[1]=get_image_texture("image/player1_name.bmp");
+    name_texture[0]=get_image_texture("image/player2_name.bmp");
     A.flag=1;
-    A.render_board(renderer);
+    A.render_board();
     int side=3;
     while (A.cell[0].num>0||A.cell[11].num>0)
     {
         A.flag=side%2;
-        A.render_board(renderer);
-        player_turn(renderer,A,side);
+        A.render_board();
+        player_turn(A,side);
         if (rtmenu==1) return;
         side=(side+1)%2;
     }
 
-    A.endgame(renderer);
+    A.endgame();
 }
-void singleplayer(SDL_Renderer *renderer,int level)
+void singleplayer(int level)
 {
     rtmenu=0;
     board A;
     A.setup_num();
 	A.setup_link();
 	A.setup_rect();
-	setup_renderer(renderer);
+
 	A.name[1]="player 1";
-	name_texture[1]=get_image_texture(renderer,"image/player_name.bmp");
-	if (level==0) {name_texture[0]=get_image_texture(renderer,"image/easy_bot_name.bmp");A.name[0]="easy bot";}
-	if (level==1){name_texture[0]=get_image_texture(renderer,"image/medium_bot_name.bmp");A.name[0]="medium bot";}
-	if (level==2) {name_texture[0]=get_image_texture(renderer,"image/hard_bot_name.bmp");A.name[0]="hard bot";}
+	name_texture[1]=get_image_texture("image/player_name.bmp");
+	if (level==0) {name_texture[0]=get_image_texture("image/easy_bot_name.bmp");A.name[0]="easy bot";}
+	if (level==1){name_texture[0]=get_image_texture("image/medium_bot_name.bmp");A.name[0]="medium bot";}
+	if (level==2) {name_texture[0]=get_image_texture("image/hard_bot_name.bmp");A.name[0]="hard bot";}
 	A.flag=1;
-	A.render_board(renderer);
+	A.render_board();
 	int player_side=1;int side=3;
 
     while (A.cell[0].num>0||A.cell[11].num>0)
     {
         A.flag=side%2;
-        A.render_board(renderer);
-        if (side%2==player_side) player_turn(renderer,A,side);
-        else bot_turn(renderer,A,side,level);
+        A.render_board();
+        if (side%2==player_side) player_turn(A,side);
+        else bot_turn(A,side,level);
         if (rtmenu==1) return;
         side=(side+1)%2;
     }
 
-    A.endgame(renderer);
+    A.endgame();
 }
 #endif

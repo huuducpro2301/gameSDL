@@ -12,7 +12,7 @@ public:
     SDL_Rect rect,rect_num;
     int num;
 public:
-    void render_tile(SDL_Renderer* renderer)
+    void render_tile()
     {
         int ok=0;int n=num;
         if (n>=100)
@@ -21,13 +21,13 @@ public:
         }
         SDL_Rect rr=rect;
         rr.x+=11;rr.y+=18;rr.w=80;rr.h=80;
-        render_image(renderer,stone_texture[n],rr);
+        render_image(stone_texture[n],rr);
         if (ok==1)
         {
             SDL_Rect gg;
             gg.x=rect.x+16;gg.y=rect.y+75;
             gg.w=60;gg.h=60;
-            render_image(renderer,bigstone_texture,gg);
+            render_image(bigstone_texture,gg);
             gg=rect;
             gg.x+=51;gg.w=10;gg.h=10;
             TTF_SizeText(font,to_string(n+10).c_str(),&gg.w,&gg.h);

@@ -104,9 +104,9 @@ pp hardbot(board &A,int side)
     return getmax(A,side,6).second;
 }
 
-void bot_turn(SDL_Renderer *renderer,board &A,int side,int level)
+void bot_turn(board &A,int side,int level)
 {
-    A.reset_none_side(renderer,side);
+    A.reset_none_side(side);
     pp turn;
     if (level==0) turn=easybot(A,side);
    if (level==1) turn=mediumbot(A,side);
@@ -116,26 +116,26 @@ void bot_turn(SDL_Renderer *renderer,board &A,int side,int level)
         SDL_Rect rect=A.cell[5*side+turn.first].rect;
 
         SDL_Rect arrow=rect;arrow.x-=20;arrow.y+=25;arrow.w=50;arrow.h=50;
-        A.render_board(renderer);
+        A.render_board();
         SDL_Rect rr=rect;rr.x+=6;rr.y+=6;rr.w-=12;rr.h-=12;
-                        render_image(renderer,pick_tile_texture,rr);
-        render_image(renderer,turnleft_texture,arrow);
+        render_image(pick_tile_texture,rr);
+        render_image(turnleft_texture,arrow);
     }
     else
     {
         SDL_Rect rect=A.cell[5*side+turn.first].rect;
 
         SDL_Rect arrow=rect;arrow.x+=70;arrow.y+=25;arrow.w=50;arrow.h=50;
-        A.render_board(renderer);
+        A.render_board();
         SDL_Rect rr=rect;rr.x+=6;rr.y+=6;rr.w-=12;rr.h-=12;
-                        render_image(renderer,pick_tile_texture,rr);
-        render_image(renderer,turnright_texture,arrow);
+        render_image(pick_tile_texture,rr);
+        render_image(turnright_texture,arrow);
 
     }
     SDL_RenderPresent(renderer);
     SDL_Delay(500);
         //A.render_board(renderer);
-    if (turn.second==0) A.move_next(renderer,turn.first,side);
-    else A.move_back(renderer,turn.first,side);
+    if (turn.second==0) A.move_next(turn.first,side);
+    else A.move_back(turn.first,side);
 }
 #endif

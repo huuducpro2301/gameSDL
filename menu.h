@@ -16,32 +16,32 @@ struct menu_tile
         name=s;
         select=sl;
     }
-    void render_menu_tile(SDL_Renderer *renderer)
+    void render_menu_tile()
     {
         if (select==1)
-            render_image(renderer,select_texture,rect);
-        else render_image(renderer,blank_texture,rect);
-        render_image(renderer,menu_tile_texture,rect);
+            render_image(select_texture,rect);
+        else render_image(blank_texture,rect);
+        render_image(menu_tile_texture,rect);
         SDL_Rect trect=rect;
         trect.x+=20;trect.y+=20;
-        render_text(renderer,name,trect,20);
+        render_text(name,trect,20);
     }
 };
 int dem=0;
-void load_menu(SDL_Renderer *renderer,vector <menu_tile> P)
+void load_menu(vector <menu_tile> P)
 {
-    setup_renderer(renderer);
+    render_image(blank_texture,{0,0,2000,2000});
     SDL_Rect rect={400,0,600,600};
-    render_image(renderer,zz_texture,rect);
+    render_image(zz_texture,rect);
     rect={130,100,300,300};
-    render_text(renderer,"MENU",rect,40);
+    render_text("MENU",rect,40);
     for (int i=0;i<P.size();i++)
     {
-        P[i].render_menu_tile(renderer);
+        P[i].render_menu_tile();
     }
     SDL_RenderPresent(renderer);
 }
-int select_level(SDL_Renderer *renderer)
+int select_level()
 {
     SDL_Event event;
     vector <menu_tile> P;P.resize(3);
@@ -50,7 +50,7 @@ int select_level(SDL_Renderer *renderer)
     P[2].setup(248,401,150,70,"hard",0);
     for (int i=0;i<3;i++)
     {
-        P[i].render_menu_tile(renderer);
+        P[i].render_menu_tile();
     }
     SDL_RenderPresent(renderer);
    // SDL_Delay(2000);
@@ -65,7 +65,7 @@ int select_level(SDL_Renderer *renderer)
                 if (check_click(P[i].rect,x,y)) P[i].select=1;
                 else P[i].select=0;
             for (int i=0;i<3;i++)
-                P[i].render_menu_tile(renderer);
+                P[i].render_menu_tile();
             SDL_RenderPresent(renderer);
         }
         if (event.type==SDL_MOUSEBUTTONDOWN)
@@ -81,21 +81,28 @@ int select_level(SDL_Renderer *renderer)
         }
     }
 }
-void tabmenu(SDL_Renderer *renderer)
+void tabmenu()
 {
+    Mix_PlayMusic(theme_music,-1);
     vector <menu_tile> P;P.resize(3);
-    render_image(renderer,select_texture,{100,200,250,70});
+    render_image(select_texture,{100,200,250,70});
     P[0].setup(100,200,150,70,"multiplayer",0);
     P[1].setup(100,267,150,70,"singleplayer",0);
     P[2].setup(100,334,150,70,"exit",0);
-    load_menu(renderer,P);
+    load_menu(P);
+    int ok=0;
     SDL_Event event;
     while (1)
     {
        //
-
+        if (ok==1)
+        {
+            Mix_PlayMusic(theme_music,-1);
+            ok=0;
+        }
         while (SDL_PollEvent(&event))
         {
+            // nhan biet chuot dang o thanh nao ma con doi mau
             if (event.type==SDL_MOUSEMOTION)
             {
                 int x,y;
@@ -104,7 +111,7 @@ void tabmenu(SDL_Renderer *renderer)
                     if (check_click(P[i].rect,x,y))
                         P[i].select=1;
                     else P[i].select=0;
-                load_menu(renderer,P);
+                load_menu(P);
             }
             //load_menu(renderer,P);
             if (event.type==SDL_MOUSEBUTTONDOWN)
@@ -114,15 +121,24 @@ void tabmenu(SDL_Renderer *renderer)
                 SDL_GetMouseState(&x,&y);
                 if (check_click(P[0].rect,x,y))
                 {
-                    multiplayer(renderer);
+                    Mix_HaltMusic();
+                    multiplayer();
+                    ok=1;
+                    break;
+                   // Mix_ResumeMusic();
                     //load_menu(renderer,P);
                     //return;
                 }
                 if (check_click(P[1].rect,x,y))
                 {
-                    int level=select_level(renderer);
-                    if (level==3) {load_menu(renderer,P);continue;}
-                    singleplayer(renderer,level);
+
+                    int level=select_level();
+                    if (level==3) {load_menu(P);continue;}
+                    Mix_HaltMusic();
+                    singleplayer(level);
+                    ok=1;
+                    break;
+                   // Mix_ResumeMusic();
                     //load_menu(renderer,P);
                 }
                 if (check_click(P[2].rect,x,y))

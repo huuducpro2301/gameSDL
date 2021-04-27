@@ -4,52 +4,52 @@
 	<ActiveTarget name="Debug" />
 	<File name="player.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="66" topLine="36" />
-		</Cursor>
-	</File>
-	<File name="board.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6425" topLine="170" />
-		</Cursor>
-	</File>
-	<File name="gameplay.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1418" topLine="24" />
+			<Cursor1 position="182" topLine="59" />
 		</Cursor>
 	</File>
 	<File name="bot.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3613" topLine="94" />
+			<Cursor1 position="200" topLine="103" />
 		</Cursor>
 	</File>
-	<File name="menu.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="display.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="410" topLine="98" />
+			<Cursor1 position="2562" topLine="26" />
 		</Cursor>
 	</File>
 	<File name="board.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="282" topLine="0" />
+			<Cursor1 position="80" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="display.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="board.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="837" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="display.cpp" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1292" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="tile.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="874" topLine="0" />
+			<Cursor1 position="5631" topLine="194" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1536" topLine="1" />
+			<Cursor1 position="2035" topLine="38" />
+		</Cursor>
+	</File>
+	<File name="display.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="665" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="menu.h" open="1" top="1" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3943" topLine="111" />
+		</Cursor>
+	</File>
+	<File name="gameplay.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1461" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="tile.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="222" topLine="10" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

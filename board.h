@@ -2,12 +2,13 @@
 #define _BOARD_H
 #include <SDL.h>
 #include <bits/stdc++.h>
+#include <SDL_mixer.h>
 using namespace std;
 
 #include "tile.h"
 #include "display.h"
 #include <SDL.h>
-
+void wait(int t);
 class board
 {
 public:
@@ -19,13 +20,13 @@ public:
     void setup_num();
     void setup_link();
     void setup_rect();
-    void render_score(SDL_Renderer *renderer);
-    void render_board(SDL_Renderer *renderer);
-    void move_next(SDL_Renderer *renderer,int start,int side);
-    void move_back(SDL_Renderer *renderer,int start,int side);
-    void reset_none_side(SDL_Renderer *renderer,int side);
-    void endgame(SDL_Renderer *renderer);
-    void move_image(SDL_Renderer *renderer,SDL_Texture *texture,SDL_Rect org,SDL_Rect deter,int time);
+    void render_score();
+    void render_board();
+    void move_next(int start,int side);
+    void move_back(int start,int side);
+    void reset_none_side(int side);
+    void endgame();
+    void move_image(SDL_Texture *texture,SDL_Rect org,SDL_Rect deter,int time);
 };
 
 #endif // _BOARD_H

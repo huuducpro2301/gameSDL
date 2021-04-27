@@ -18,7 +18,7 @@
 					<Add directory="D:/Program Files/SDL/SDL2-2.0.14/x86_64-w64-mingw32/include/SDL2" />
 				</Compiler>
 				<Linker>
-					<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf" />
+					<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer" />
 					<Add directory="D:/Program Files/SDL/SDL2-2.0.14/x86_64-w64-mingw32/lib" />
 				</Linker>
 			</Target>

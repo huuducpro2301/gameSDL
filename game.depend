@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1616556044 source:d:\c++ games\oh unqual\main.cpp
+1619500112 source:d:\c++ games\oh unqual\main.cpp
 	<SDL.h>
 	<SDL_ttf.h>
 	<bits/stdc++.h>
@@ -378,29 +378,31 @@
 	"begin_code.h"
 	"close_code.h"
 
-1616414258 source:d:\c++ games\oh unqual\board.cpp
+1619541581 source:d:\c++ games\oh unqual\board.cpp
 	<bits/stdc++.h>
 	"board.h"
 
-1616314370 d:\c++ games\oh unqual\board.h
+1619541579 d:\c++ games\oh unqual\board.h
 	<SDL.h>
 	<bits/stdc++.h>
+	<SDL_mixer.h>
 	"tile.h"
 	"display.h"
 	<SDL.h>
 
-1614100061 d:\c++ games\oh unqual\tile.h
+1616567883 d:\c++ games\oh unqual\tile.h
 	<SDL.h>
 	<SDL_ttf.h>
 	<bits/stdc++.h>
 	"display.h"
 
-1616558714 d:\c++ games\oh unqual\display.h
+1619541576 d:\c++ games\oh unqual\display.h
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_ttf.h>
+	<SDL_mixer.h>
 
-1616556032 source:d:\c++ games\oh unqual\display.cpp
+1619541572 source:d:\c++ games\oh unqual\display.cpp
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_ttf.h>
@@ -411,27 +413,27 @@
 	"begin_code.h"
 	"close_code.h"
 
-1616310046 d:\c++ games\oh unqual\player.h
+1616568428 d:\c++ games\oh unqual\player.h
 	<bits/stdc++.h>
 	<SDL.h>
 	"board.h"
 	"display.h"
 	"tile.h"
 
-1616322209 d:\c++ games\oh unqual\gameplay.h
+1616568428 d:\c++ games\oh unqual\gameplay.h
 	<bits/stdc++.h>
 	<SDL.h>
 	"board.h"
 	"display.h"
 	"bot.h"
 
-1615641511 d:\c++ games\oh unqual\menu.h
+1619541563 d:\c++ games\oh unqual\menu.h
 	<bits/stdc++.h>
 	<SDL.h>
 	"gameplay.h"
 	"display.h"
 
-1616413906 d:\c++ games\oh unqual\bot.h
+1616568428 d:\c++ games\oh unqual\bot.h
 	<bits/stdc++.h>
 	<SDL.h>
 	"board.h"
@@ -446,4 +448,18 @@
 1613208517 d:\c++ games\oh unqual\image_texture.h
 	<bits/stdc++.h>
 	<SDL.h>
+
+1540998018 d:\program files\sdl\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1619541440 d:\c++ games\oh unqual\sound.h
+	<bits/stdc++.h>
+	<SDL.h>
+	<SDL_mixer.h>
 

@@ -6,13 +6,13 @@ using namespace std;
 #include "board.h"
 #include "display.h"
 #include "tile.h"
-void player_turn(SDL_Renderer *renderer,board &A,int side)
+void player_turn(board &A,int side)
 {
     SDL_Event event;
     int pos_arrow=0;
-    A.reset_none_side(renderer,side);
+    A.reset_none_side(side);
     int xside=side;side%=2;
-    render_image(renderer,exit1_texture,{100,50,100,50});
+    render_image(exit1_texture,{100,50,100,50});
     SDL_RenderPresent(renderer);
     while (1)
     {
@@ -24,12 +24,12 @@ void player_turn(SDL_Renderer *renderer,board &A,int side)
                 SDL_GetMouseState(&x,&y);
                 if (check_click({100,50,100,50},x,y))
                 {
-                    render_image(renderer,exit2_texture,{100,50,100,50});
+                    render_image(exit2_texture,{100,50,100,50});
                     SDL_RenderPresent(renderer);
                 }
                 else
                 {
-                    render_image(renderer,exit1_texture,{100,50,100,50});
+                    render_image(exit1_texture,{100,50,100,50});
                     SDL_RenderPresent(renderer);
                 }
             }
@@ -48,15 +48,15 @@ void player_turn(SDL_Renderer *renderer,board &A,int side)
                     arrow.x-=20;arrow.y+=15;arrow.w=50;arrow.h=50;
                     if (check_click(arrow,x,y))
                     {
-                        if (side==0) A.move_back(renderer,pos_arrow,xside);
-                        else A.move_next(renderer,5+pos_arrow,xside);
+                        if (side==0) A.move_back(pos_arrow,xside);
+                        else A.move_next(5+pos_arrow,xside);
                         return;
                     }
                     arrow.x+=80;
                     if (check_click(arrow,x,y))
                     {
-                        if (side==0) A.move_next(renderer,pos_arrow,xside);
-                        else A.move_back(renderer,5+pos_arrow,xside);
+                        if (side==0) A.move_next(pos_arrow,xside);
+                        else A.move_back(5+pos_arrow,xside);
                         return;
                     }
 
@@ -74,20 +74,20 @@ void player_turn(SDL_Renderer *renderer,board &A,int side)
                     {
                         pos_arrow=i;
                         SDL_Rect arrow=rect;arrow.x-=20;arrow.y+=25;arrow.w=50;arrow.h=50;
-                        A.render_board(renderer);
+                        A.render_board();
                         SDL_Rect rr=rect;rr.x+=6;rr.y+=6;rr.w-=12;rr.h-=12;
-                        render_image(renderer,pick_tile_texture,rr);
+                        render_image(pick_tile_texture,rr);
 
-                        render_image(renderer,turnleft_texture,arrow);
+                        render_image(turnleft_texture,arrow);
 
                         arrow.x=rect.x+75;
-                        render_image(renderer,turnright_texture,arrow);
+                        render_image(turnright_texture,arrow);
                         SDL_RenderPresent(renderer);
 
                     }
 
                 }
-                render_image(renderer,exit1_texture,{100,50,100,50});
+                render_image(exit1_texture,{100,50,100,50});
                 SDL_RenderPresent(renderer);
 
             }
