@@ -2,7 +2,7 @@
 
                              	      GAME: Ô ĂN QUAN
 				   				  
-		Author: Hoàng Phan Hữu Đức                MSV: 20020011  
+	    	  Author: Hoàng Phan Hữu Đức                  MSV: 20020011           LHP: INT2215_6
 
 	
 	1. Giới thiệu game: 
